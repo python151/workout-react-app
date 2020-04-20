@@ -1,0 +1,31 @@
+.clear {
+    border: none;
+    background-color: transparent;
+    color: white;
+    margin: 0 2px;
+    width: 5px;
+}
+
+.set {
+    width: 60px;
+    margin: 0;
+}
+
+.set-size {
+    width: 60px;
+    margin: 0;
+}
+
+.input-group {
+    margin: 7px;
+    height: 20px;
+    margin-bottom: 1.5em;
+}
+
+.set-pill {
+    margin-left: 10px;
+}
+
+.card {
+    margin-top: 1em;
+}
