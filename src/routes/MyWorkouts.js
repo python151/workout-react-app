@@ -12,14 +12,31 @@ export default class Home extends React.Component {
                     "Pulls"
                 ]
             }],
-            currentExercises: [{name: "Bench", numOfSets: 3, setSize: 6,}]
+            currentExercises: []
         }
     }
 
     handleDataResponse = (response) => {
         if (response.success) {
+            let workouts = [];
+            response.workouts.map(workout => {
+                // objects are implemented as hash tables anyway for constant lookup time
+                let hash = {};
+                workout.sets.map(set => {
+                    if (hash[set] === true) {}
+                    else {
+                        hash[set] = true;
+                    }
+                })
+
+                // getting all propreties in hash table
+                let sets = Object.getOwnPropertyNames(hash);
+                workout.sets = sets;
+
+                workouts.push(workout)
+            })
             this.setState({
-                workouts: response.workouts,
+                workouts: workouts,
             })
         }
     }
@@ -106,6 +123,8 @@ export default class Home extends React.Component {
                 sets: current
             }]
         })
+
+        this.saveSets()
     }
 
 
@@ -120,8 +139,7 @@ export default class Home extends React.Component {
                                     {workout.sets.join(", ")}
                                 </div>
                                 <br/>
-                                <a href="#" class="btn btn-primary card-link">More...</a>
-                                <a href="#" class="btn btn-primary card-link">Schedule Workout</a>
+                                <a href={"/workout/"+workout.id} class="btn btn-primary card-link">Full workout</a>
                             </div>
                         </div>
                     </div>

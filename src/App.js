@@ -11,6 +11,7 @@ import Signup from './routes/Signup';
 import Logout from './routes/Logout';
 import Dashboard from './routes/Dashboard';
 import MyWorkouts from './routes/MyWorkouts';
+import Workout from './routes/Workout';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Route path="/logout" component={Logout} />
           <Route path="/Dashboard" component={Dashboard} />
           <Route path="/My Workouts" component={MyWorkouts} />
+
+          <Route path="/workout/:id" component={Workout} />
         </Switch>
       </div>
 
