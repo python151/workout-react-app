@@ -43,7 +43,7 @@ export default class Home extends React.Component {
 
     getWorkoutsFromApi = () => {
         let sess = localStorage.getItem("session-key")
-        fetch('https://workoutapi.pythonanyewhere.com/get/my/workouts/?session-key='+sess)
+        fetch('https://workoutapi.pythonanywhere.com/get/my/workouts/?session-key='+sess)
         .then(response => response.json())
         .then(response => this.handleDataResponse(response))
         .catch(err => {})
@@ -61,7 +61,7 @@ export default class Home extends React.Component {
 
     saveSets = () => {
         let sess = localStorage.getItem("session-key")
-        fetch('https://workoutapi.pythonanyewhere.com/add/workout/?session-key='+sess, {
+        fetch('https://workoutapi.pythonanywhere.com/add/workout/?session-key='+sess, {
             method: "POST",
             body: JSON.stringify({
                 sets: this.state.currentExercises

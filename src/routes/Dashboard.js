@@ -18,7 +18,7 @@ export default class Home extends React.Component {
 
     getDataFromApi = () => {
         let sess = localStorage.getItem("session-key")
-        fetch('https://workoutapi.pythonanyewhere.com/get/my/exercises/?session-key='+sess)
+        fetch('https://workoutapi.pythonanywhere.com/get/my/exercises/?session-key='+sess)
         .then(response => response.json())
         .then(response => this.handleDataResponse(response))
     }
