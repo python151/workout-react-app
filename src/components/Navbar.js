@@ -3,7 +3,6 @@ import React from 'react'
 export default function(props) {
     let items = [
         "Home",
-        "Workouts",
         "Login"
     ]
     let button = {
@@ -17,8 +16,8 @@ export default function(props) {
             "Logout"
         ]
         button = {
-            val: "Todays Workout",
-            to: "/today"
+            val: "Home",
+            to: "/Home"
         }
     }
     return (
