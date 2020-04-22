@@ -24,7 +24,7 @@ export default class Login extends React.Component {
 
         let values = `?username=${username}&password=${password}`
 
-        fetch("https://workoutapi.pythonanyehere.com/login/"+values)
+        fetch("https://workoutapi.pythonanyewhere.com/login/"+values)
         .then(response => response.json())
         .then(response => this.handleLoginResponse(response))
     }
