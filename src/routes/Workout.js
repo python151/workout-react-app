@@ -49,7 +49,7 @@ export default class Workout extends React.Component {
     getWorkoutFromApi = () => {
         let id = Number( this.getLastInWindowLocation(String(window.location)) );
         let sess = localStorage.getItem("session-key")
-        fetch("http://localhost:8000/get/workout/"+id+"/?session-key="+sess)
+        fetch("https://workoutapi.pythonanyehere.com/get/workout/"+id+"/?session-key="+sess)
         .then(response => response.json())
         .then(response => this.handleApiResponse(response))
     }

@@ -34,7 +34,7 @@ export default class Home extends React.Component {
     }
 
     getNewestWorkouts = () => {
-        fetch('http://localhost:8000/get/all/workouts/')
+        fetch('https://workoutapi.pythonanyehere.com/get/all/workouts/')
         .then(response => response.json())
         .then(response => this.handleApiWorkoutResponse(response))
         .catch(err => {})

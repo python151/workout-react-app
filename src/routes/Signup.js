@@ -26,7 +26,7 @@ export default class Signup extends React.Component {
 
         let password = document.getElementById("password").value
 
-        fetch("http://localhost:8000/signup/", {
+        fetch("https://workoutapi.pythonanyehere.com/signup/", {
             method: "POST",
             body: JSON.stringify({
                 email: email,
